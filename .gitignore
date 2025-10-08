@@ -20,6 +20,7 @@ secrets.*
 keystore.properties
 app/google-services.json
 app/src/main/res/values/secrets.xml
+openai.properties
 
 # SO/Editor
 .DS_Store
