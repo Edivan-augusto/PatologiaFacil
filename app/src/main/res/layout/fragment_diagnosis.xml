@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pf_bg">
+
+    <!-- HEADER FIXO (fora do ScrollView) -->
+    <LinearLayout
+        android:id="@+id/headerDiagnosis"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/brandPrimary"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvHeaderDiagnosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado do Diagnóstico"
+            android:textColor="@color/pf_white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- CONTEÃšDO ROLÃVEL (comeÃ§a abaixo do header) -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="96dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerDiagnosis"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- CartÃ£o 1: Imagem + CaracterizaÃ§Ã£o + Metadados -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clipToOutline="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/pf_divider"
+                app:cardBackgroundColor="@color/surfaceLight">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Imagem analisada (DINÃ‚MICA) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:clipToOutline="true"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/pf_elevation"
+                        app:cardBackgroundColor="@color/surfaceLight">
+
+                        <ImageView
+                            android:id="@+id/imgAnalyzed"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="Imagem analisada"
+                            android:background="@drawable/capture_placeholder_bg" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- TÃ­tulo seÃ§Ã£o: CaracterizaÃ§Ã£o -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/char_title"
+                        android:textColor="@color/brandPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- ParÃ¡grafo descritivo -->
+                    <TextView
+                        android:id="@+id/txtCharacterization"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/pf_onSurfaceVariant"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp"
+                        android:justificationMode="inter_word" />
+
+                    <!-- Linha de metadados: Data e Gravidade -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Bloco Data -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_date"
+                                android:textColor="@color/pf_onSurfaceVariant"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <Space
+                                android:layout_width="8dp"
+                                android:layout_height="0dp" />
+
+                            <TextView
+                                android:id="@+id/txtDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/pf_onSurface"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <!-- Bloco Gravidade (chip/pÃ­lula DINÃ‚MICA) -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_severity"
+                                android:textColor="@color/pf_onSurfaceVariant"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <Space
+                                android:layout_width="8dp"
+                                android:layout_height="0dp" />
+
+                            <TextView
+                                android:id="@+id/txtSeverity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:minHeight="28dp"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:gravity="center_vertical"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                android:textColor="@color/pf_onPrimary"
+                                android:background="@drawable/pf_badge_light" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CartÃ£o 2: Causas ProvÃ¡veis -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/pf_divider"
+                app:cardBackgroundColor="@color/surfaceLight">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/causes_title"
+                        android:textColor="@color/brandPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Lista dinÃ¢mica -->
+                    <LinearLayout
+                        android:id="@+id/listCauses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CartÃ£o 3: PossÃ­veis Reparos + Callout -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/pf_divider"
+                app:cardBackgroundColor="@color/surfaceLight">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/advice_title"
+                        android:textColor="@color/brandPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Lista dinÃ¢mica -->
+                    <LinearLayout
+                        android:id="@+id/listAdvice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <!-- Callout de aviso -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/borda_amarela"
+                        android:orientation="horizontal"
+                        android:clipToOutline="true"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@android:drawable/ic_dialog_alert"
+                            app:tint="@color/pf_icon"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/liability" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/liability"
+                    android:textColor="@color/pf_onSurfaceVariant"
+                            android:textSize="13sp"
+                            android:lineSpacingExtra="3dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Barra de aÃ§Ãµes (rolÃ¡vel junto com o conteÃºdo) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="28dp">
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_save_history"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/pf_onPrimary"
+                    android:backgroundTint="@color/brandPrimary" />
+
+                <Space
+                    android:layout_width="14dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:id="@+id/btnShare"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Compartilhar"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/pf_onPrimary"
+                    android:backgroundTint="@color/brandPrimary" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

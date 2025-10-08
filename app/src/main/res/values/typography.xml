@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text appearances using Inter via res/font downloadable entries -->
+    <style name="TextAppearance.PF.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="fontFamily">@font/inter_600</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textSize">48sp</item>
+        <item name="lineHeight">56sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="fontFamily">@font/inter_600</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textSize">40sp</item>
+        <item name="lineHeight">48sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/inter_600</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textSize">32sp</item>
+        <item name="lineHeight">40sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/inter_600</item>
+        <item name="android:textSize">22sp</item>
+        <item name="lineHeight">28sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/inter_600</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/inter_400</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/inter_400</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
+    </style>
+
+    <style name="TextAppearance.PF.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/inter_600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
+    </style>
+
+    <!-- Corpo de texto padrÃ£o para diagnÃ³stico -->
+    <style name="TextAppearance.PF.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/pf_black_soft</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- (opcional: para consistÃªncia com outros) -->
+    <style name="TextAppearance.PF.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/pf_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.PF.Subtitle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/pf_black_soft</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.PF.Placeholder" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/pf_gray_medium</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

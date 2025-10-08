@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.hitsu.patologiafacil.ui.OnboardingFragment"
+        android:label="Onboarding">
+        <action
+            android:id="@+id/action_onboarding_to_tutorial"
+            app:destination="@id/tutorialFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.hitsu.patologiafacil.ui.TutorialFragment"
+        android:label="Tutorial">
+        <action
+            android:id="@+id/action_tutorial_to_welcome"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.hitsu.patologiafacil.ui.WelcomeFragment"
+        android:label="Inicio" />
+    <fragment
+        android:id="@+id/captureFragment"
+        android:name="com.hitsu.patologiafacil.ui.CaptureFragment"
+        android:label="Capturar" />
+    <fragment
+        android:id="@+id/diagnosisFragment"
+        android:name="com.hitsu.patologiafacil.ui.DiagnosisFragment"
+        android:label="Diagnostico" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.hitsu.patologiafacil.ui.HistoryFragment"
+        android:label="Historico" />
+</navigation>

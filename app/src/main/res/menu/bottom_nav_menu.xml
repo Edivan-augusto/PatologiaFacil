@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/tutorialFragment" android:title="@string/tab_home" android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/introBasicFragment" android:title="@string/tab_intro" android:icon="@drawable/ic_diagnosis"/>
+    <item android:id="@+id/captureFragment" android:title="@string/tab_capture" android:icon="@drawable/ic_camera"/>
+    <item android:id="@+id/historyFragment" android:title="@string/tab_history" android:icon="@drawable/ic_history"/>
+</menu>

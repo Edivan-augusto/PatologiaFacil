@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.PF.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <!-- Tipografia (mantida, mas labels estão ocultas no layout) -->
+        <item name="itemTextAppearanceActive">@style/TextAppearance.PF.BottomNav</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.PF.BottomNav</item>
+
+        <!-- Cores dos itens -->
+        <item name="itemIconTint">@color/pf_bottom_nav_icon</item>
+        <item name="itemTextColor">@color/pf_bottom_nav_item</item>
+        <item name="itemRippleColor">@color/pf_bottom_nav_ripple</item>
+
+        <!-- Sombra azul clara aplicada via background custom -->
+        <item name="itemBackground">@drawable/pf_bottom_nav_item_background</item>
+
+        <!-- Desativa visual do indicador ativo padrão (define cor transparente) -->
+        <item name="itemActiveIndicatorStyle">@style/Widget.PF.BottomNav.ActiveIndicator.Transparent</item>
+
+        <!-- Fundo -->
+        <item name="android:background">@drawable/bottom_nav_background</item>
+    </style>
+
+    <!-- Alias de compatibilidade: alguns recursos podem referenciar este nome -->
+    <style name="Widget.PF.BottomNav" parent="Widget.PF.BottomNavigation" />
+    <style name="TextAppearance.PF.BottomNav" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Indicador ativo padrão: tornar transparente para não aparecer roxo dentro da pílula azul -->
+    <style name="Widget.PF.BottomNav.ActiveIndicator.Transparent">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+
+    <!-- Compat: se algum recurso referenciar o nome antigo, mantemos transparente -->
+    <style name="Widget.PF.BottomNav.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+</resources>

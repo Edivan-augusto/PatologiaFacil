@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_capture">Capturar</string>
+    <string name="select_from_gallery">Galeria</string>
+    <string name="location_hint">Local (opcional)</string>
+    <string name="time_hint">Tempo do evento (opcional)</string>
+</resources>

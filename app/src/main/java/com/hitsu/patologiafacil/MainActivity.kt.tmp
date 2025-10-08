@@ -1,0 +1,39 @@
+﻿package com.hitsu.patologiafacil
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.NavOptions
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.hitsu.patologiafacil.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHost.navController
+
+        // Exibe a bottom nav apenas nos destinos top-level (itens do menu)
+        navController.addOnDestinationChangedListener { _, dest, _ ->
+            val show = when (dest.id) {
+                R.id.welcomeFragment, R.id.captureFragment, R.id.historyFragment -> true
+                else -> false
+            }
+            binding.bottomNav.visibility = if (show) android.view.View.VISIBLE else android.view.View.GONE
+        }
+
+        val bottomNav: BottomNavigationView = binding.bottomNav
+        // Usa o mediator padrão do NavigationUI (suporta múltiplas backstacks).
+        bottomNav.setupWithNavController(navController)
+        // Não sobrescreva os listeners: evita quebrar o comportamento padrão da NavigationUI
+    }
+}

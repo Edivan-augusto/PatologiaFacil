@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- cobre QUALQUER arquivo em cache/ -->
+    <cache-path name="cache_root" path="." />
+    <!-- cobre especificamente cache/share/ -->
+    <cache-path name="cache_share" path="share/" />
+
+    <!-- onde salvamos a foto capturada -->
+    <cache-path name="images" path="images/" />
+    <!-- opcionalmente, permitir também filesDir -->
+    <files-path name="images_files" path="images/" />
+    <!-- opcional: se um dia quiser usar external files -->
+    <external-files-path name="ext_images" path="Pictures/PatologiaFacil/" />
+</paths>
+

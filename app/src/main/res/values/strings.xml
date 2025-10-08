@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PatologiaFácil</string>
+    <string name="title_welcome">Diagnóstico inteligente para suas estruturas</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="btn_google">Continuar com Google</string>
+    <string name="tutorial_title">Como funciona</string>
+    <string name="tutorial_step1">1. Capturar Foto</string>
+    <string name="tutorial_step1_desc">Boa iluminação, distância adequada, foco</string>
+    <string name="tutorial_step2">2. Análise do Diagnóstico</string>
+    <string name="tutorial_step2_desc">Resultados com base em heurísticas morfológicas</string>
+    <string name="btn_start_using">Começar a Usar</string>
+    <string name="tab_home">Início</string>
+    <string name="tab_capture">Capturar</string>
+    <string name="tab_diagnosis">Diagnóstico</string>
+    <string name="tab_history">Histórico</string>
+    <string name="capture_header">Capturar Imagem</string>
+    <string name="no_image">Nenhuma imagem selecionada</string>
+    <string name="hint_local">Ex: Parede da sala, Pilar externo</string>
+    <string name="hint_tempo">Ex: 2 meses atrás, Início de 2024</string>
+    <string name="btn_take_photo">Tirar Foto</string>
+    <string name="btn_pick_gallery">Selecionar da Galeria</string>
+    <string name="btn_analyze">Analisar</string>
+    <string name="diagnosis_title">Resultado do Diagnóstico</string>
+    <string name="char_title">Caracterização da Fissura</string>
+    <string name="label_date">Data</string>
+    <string name="label_severity">Gravidade</string>
+    <string name="severity_low">Baixa</string>
+    <string name="severity_mid">Moderada</string>
+    <string name="severity_high">Alta</string>
+    <string name="causes_title">Causas Prováveis</string>
+    <string name="advice_title">Ações sugeridas</string>
+    <string name="btn_save_history">Salvar</string>
+    <string name="btn_back">Voltar</string>
+    <string name="liability">O aplicativo somente sugere possíveis reparos e recomendamos que antes de qualquer ação procure um engenheiro, não nos responsabilizamos por quaisquer reformas feitas sem o acompanhamento de um profissional.</string>
+    <string name="history_empty">Sem análises salvas ainda.</string>
+    <string name="continue_with_google">Continuar com Google</string>
+    <string name="enter">Entrar</string>
+    <string name="welcome_phrase">Diagnósticos inteligentes para suas estruturas</string>
+    <string name="history_title">Histórico de Diagnósticos</string>
+    <string name="see_details">Ver detalhes</string>
+    <string name="details_title">Detalhes do diagnóstico</string>
+    <string name="share_diagnosis">Compartilhar diagnóstico</string>
+    <string name="desc_label">Descrição</string>
+    <string name="causes_label">Causas prováveis</string>
+    <string name="confirm_remove_history">Você quer mesmo remover este item do histórico?</string>
+    <string name="filter_critical">Críticos</string>
+    <string name="filter_moderate">Moderados</string>
+    <string name="filter_light">Leves</string>
+    
+    <!-- Intro Basic -->
+    <string name="intro_basic_title">Introdução básica</string>
+    <string name="intro_basic_card1_title">O básico da estrutura</string>
+    <string name="intro_basic_vigas">🔹 <b>Vigas</b> — elementos horizontais que recebem o peso das lajes e parte das paredes e levam esse peso até os pilares.</string>
+    <string name="intro_basic_pilares">🔹 <b>Pilares</b> — elementos verticais que conduzem as cargas das vigas e lajes até as fundações.</string>
+    <string name="intro_basic_lajes">🔹 <b>Lajes</b> — placas horizontais que funcionam como piso e cobertura, distribuindo o peso para vigas/pilares.</string>
+    <string name="intro_basic_alvenaria">🔹 <b>Alvenaria</b> — conjunto de tijolos ou blocos assentados com argamassa; pode ser de vedação (não estrutural) ou estrutural (ajuda a suportar cargas).</string>
+
+    <string name="intro_basic_card2_title">Introdução a fissuras (trincas)</string>
+    <string name="intro_basic_legend_intro">🔹 “A imagem mostra uma parede de alvenaria com diferentes tipos de fissuras (trincas) destacadas em traços mais grossos. Cada tipo de fissura está identificado pelo seu nome:”</string>
+    <string name="intro_basic_denteada">🔹 <b>Denteada</b> — segue o alinhamento dos blocos, contornando as juntas em “escada irregular”.</string>
+    <string name="intro_basic_vertical">🔹 <b>Vertical</b> — reta, acompanha a linha vertical da parede.</string>
+    <string name="intro_basic_horizontal">🔹 <b>Horizontal</b> — reta, estende-se no sentido horizontal, acompanhando a junta.</string>
+    <string name="intro_basic_diagonal">🔹 <b>Diagonal ou em degraus</b> — atravessa os blocos de forma inclinada, formando “degraus” nas juntas.</string>
+
+    <string name="intro_basic_go_home">Faça sua captura</string>
+    <string name="intro_basic_img1_cd">Esquema básico de elementos estruturais (vigas, pilares, lajes e alvenaria)</string>
+    <string name="intro_basic_img2_cd">Tipos de fissuras (trincas) em alvenaria destacados na imagem</string>
+    
+    <!-- Capture alerts -->
+    <string name="capture_alerts_title">Antes de capturar</string>
+    <string name="capture_alerts_resolution">⚙️ Recomendamos resolução mínima de 1920×1080 (Full HD) para melhor detecção. Resoluções menores podem reduzir a precisão.</string>
+    <string name="capture_alerts_gesso">⚠️ Para avaliar se a fissura está estagnada ou ativa, aplique uma fina camada de gesso. Se a trinca reaparecer após algum tempo, a fissura está ativa.</string>
+    <string name="tab_intro">Introdução</string>
+</resources>
+

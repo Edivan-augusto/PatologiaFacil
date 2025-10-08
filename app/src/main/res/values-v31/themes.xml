@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PatologiaFacil" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/pf_primary</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/pf_bg</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <!-- Android 12+ SplashScreen icon uses app logo -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="android:windowSplashScreenBackground">@color/pf_bg</item>
+    </style>
+</resources>

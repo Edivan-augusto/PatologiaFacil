@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand & Neutrals -->
+    <color name="brandPrimary">#1F3C88</color>
+    <color name="brandPrimaryDark">#162C64</color>
+    <color name="brandSecondary">#3D5AFE</color>
+    <color name="brandTertiary">#00BFA6</color>
+
+    <color name="neutral900">#0F172A</color>
+    <color name="neutral700">#334155</color>
+    <color name="neutral500">#64748B</color>
+    <color name="neutral300">#CBD5E1</color>
+    <color name="neutral100">#F1F5F9</color>
+
+    <color name="surfaceLight">#FFFFFF</color>
+    <color name="surfaceDark">#0B1222</color>
+
+    <color name="error">#D32F2F</color>
+    <color name="warning">#F59E0B</color>
+    <color name="info">#0284C7</color>
+    <color name="success">#16A34A</color>
+
+    <!-- M3 color roles (light) -->
+    <color name="m3_primary">@color/brandPrimary</color>
+    <color name="m3_onPrimary">#FFFFFF</color>
+    <color name="m3_primaryContainer">#E7ECF8</color>
+    <color name="m3_onPrimaryContainer">@color/brandPrimary</color>
+
+    <color name="m3_secondary">@color/brandSecondary</color>
+    <color name="m3_onSecondary">#FFFFFF</color>
+    <color name="m3_secondaryContainer">#E9EDFF</color>
+    <color name="m3_onSecondaryContainer">@color/brandSecondary</color>
+
+    <!-- Paleta UI (consolidada) -->
+    <color name="pf_bg">#F5F5F5</color>
+    <color name="pf_surface">#FFFFFF</color>
+    <color name="pf_divider">#E8E8E8</color>
+    <color name="pf_elevation">#E0E0E0</color>
+
+    <color name="pf_primary">#1A237E</color>
+    <color name="pf_primaryContainer">#424EA0</color>
+    <color name="pf_onPrimary">#FFFFFF</color>
+
+    <color name="pf_onSurface">#212121</color>
+    <color name="pf_onSurfaceVariant">#616161</color>
+    <color name="pf_icon">#7B8294</color>
+
+    <color name="pf_chip_critico">#D43535</color>
+    <color name="pf_chip_moderado">#F7BE34</color>
+    <color name="pf_chip_leve">#2E7D32</color>
+
+    <color name="pf_ripple_light">#1A237E1F</color>
+    <color name="pf_ripple_on_primary">#FFFFFF33</color>
+    <!-- Back-compat keys usados em telas -->
+    <color name="pf_header_blue">#1A237E</color>
+    <color name="pf_button_blue">#424EA0</color>
+    <color name="pf_card_white">#FFFFFF</color>
+
+    <!-- Bottom nav: indicador ativo (sombra azul clara) -->
+    <color name="pf_nav_active_indicator">#E0ECFF</color>
+
+    <!-- Suporte visual dos chips -->
+    <color name="pf_chip_unselected_bg">#F1F3F4</color>
+    <color name="pf_chip_unselected_text">#263238</color>
+    <color name="pf_chip_stroke">#E0E0E0</color>
+    <color name="pf_chip_ripple">#1F000000</color> <!-- ripple leve -->
+
+    <color name="m3_tertiary">@color/brandTertiary</color>
+    <color name="m3_onTertiary">#003D36</color>
+    <color name="m3_tertiaryContainer">#D6FFF7</color>
+    <color name="m3_onTertiaryContainer">#002A25</color>
+
+    <color name="m3_background">@color/pf_surface</color>
+    <color name="m3_onBackground">@color/pf_onSurface</color>
+    <color name="m3_surface">@color/pf_surface</color>
+    <color name="m3_onSurface">@color/pf_onSurface</color>
+    <color name="m3_surfaceVariant">#E5EAF2</color>
+    <color name="m3_onSurfaceVariant">@color/neutral700</color>
+    <color name="m3_outline">@color/neutral300</color>
+
+    <color name="m3_error">@color/error</color>
+    <color name="m3_onError">#FFFFFF</color>
+    <color name="m3_errorContainer">#FDE7E7</color>
+    <color name="m3_onErrorContainer">@color/error</color>
+    <color name="pf_white">#FFFFFF</color>
+    <color name="pf_black_soft">#111827</color>
+    <color name="pf_gray_medium">#6B7280</color>
+    <color name="pf_gray_light">#E5E7EB</color>
+    <color name="pf_feedback_critical">#DC2626</color>
+    <color name="pf_feedback_moderate">#F59E0B</color>
+    <color name="pf_feedback_light">#10B981</color>
+</resources>

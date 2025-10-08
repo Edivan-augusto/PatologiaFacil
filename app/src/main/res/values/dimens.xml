@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Grid / spacing -->
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="corner_button">12dp</dimen>
+    <dimen name="corner_card">16dp</dimen>
+    <dimen name="elev_appbar">2dp</dimen>
+    <dimen name="elev_card">3dp</dimen>
+    <dimen name="elev_card_focus">6dp</dimen>
+    <dimen name="elev_fab">6dp</dimen>
+    <dimen name="elev_bottomnav">8dp</dimen>
+    <dimen name="touch_target_min">48dp</dimen>
+    <dimen name="capture_preview_height">260dp</dimen>
+    <dimen name="bottom_nav_clearance">96dp</dimen>
+</resources>

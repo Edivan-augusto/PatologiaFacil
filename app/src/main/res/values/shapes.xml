@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 shape tokens -->
+    <dimen name="shape_small">12dp</dimen>
+    <dimen name="shape_medium">16dp</dimen>
+    <dimen name="shape_large">28dp</dimen>
+
+    <style name="ShapeAppearance.PatologiaFacil.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/shape_small</item>
+    </style>
+
+    <style name="ShapeAppearance.PatologiaFacil.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/shape_medium</item>
+    </style>
+
+    <style name="ShapeAppearance.PatologiaFacil.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/shape_large</item>
+    </style>
+</resources>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/pf_bg">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarTutorial"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/pf_header_blue"
+        app:title="@string/tutorial_title"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/bottom_nav_clearance">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1: Capturar Foto (imagem topo, texto abaixo) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/pf_card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/camera"
+                            android:contentDescription="Capturar Foto" />
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="start|top"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/pf_circle_blue"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/pf_white"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capturar Foto"
+                            android:textStyle="bold"
+                            android:textColor="@color/pf_black_soft"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Tire uma foto clara da fissura ou trinca na parede. Certifique-se de:" />
+
+                        <!-- Bullets com ícones -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Boa iluminacao" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Distancia adequada" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Foco na area afetada" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Analise do diagnostico -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/pf_card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/planilhas"
+                            android:contentDescription="Analise do diagnostico" />
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="start|top"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/pf_circle_blue"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/pf_white"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Analise do diagnostico"
+                            android:textStyle="bold"
+                            android:textColor="@color/pf_black_soft"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Nosso sistema analisara automaticamente:" />
+
+                        <!-- Bullets com ícones -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Tipo de fissura" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Gravidade do problema" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Possiveis causas" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: Recomendacao de reparo -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/pf_card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/homem"
+                            android:contentDescription="Recomendacao de reparo" />
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="start|top"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/pf_circle_blue"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/pf_white"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recomendacao de reparo"
+                            android:textStyle="bold"
+                            android:textColor="@color/pf_black_soft"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Voce recebera:" />
+
+                        <!-- Bullets com ícones -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Instrucoes detalhadas" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Lista de materiais" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawableStart="@drawable/ic_bullet_dot"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="Dicas profissionais" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Texto inicial centralizado acima do botao -->
+            <TextView
+                android:id="@+id/txtIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pronto para comecar?"
+                android:textAlignment="center"
+                android:textColor="@color/pf_onSurface"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartUsing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comecar a Usar"
+                app:backgroundTint="@color/pf_primary"
+                android:textColor="@color/pf_white" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

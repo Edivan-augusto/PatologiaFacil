@@ -1,0 +1,7 @@
+-keep class androidx.room.** { *; }
+-keep class * extends androidx.room.RoomDatabase { *; }
+-keepclassmembers class * { @androidx.room.* <methods>; }
+-keep class androidx.camera.** { *; }
+-keep @androidx.annotation.Keep class * { *; }
+-keep class com.hitsu.patologiafacil.domain.** { *; }
+-keepclassmembers class com.hitsu.patologiafacil.domain.** { *; }

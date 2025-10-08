@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#1A237E"
+        app:title="Capturar Foto"
+        app:titleTextColor="@android:color/white"
+        app:titleCentered="false" />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/bottom_nav_clearance"
+        android:background="#F5F5F5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <FrameLayout
+                android:id="@+id/imageSlot"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/capture_preview_height"
+                android:background="@drawable/bg_image_slot"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:id="@+id/placeholderImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/capture_placeholder"
+                    android:scaleType="centerCrop"
+                    android:alpha="0.12"
+                    android:contentDescription="@string/app_name"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/emptyState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_image_outline"
+                        app:tint="#1A237E"
+                        android:contentDescription="@string/select_from_gallery" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Nenhuma imagem selecionada"
+                        android:textColor="@color/neutral700"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Tire uma foto ou selecione da galeria"
+                        android:textColor="@color/neutral500"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Informações da Patologia"
+                        android:textColor="@color/neutral900"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="#000000"
+                        app:startIconDrawable="@drawable/ic_pin_location"
+                        app:startIconTint="#000000">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputLocal"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:hint="Ex: Parede da sala, Pilar externo" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="#000000"
+                        app:startIconDrawable="@drawable/ic_clock_outline"
+                        app:startIconTint="#000000">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputTempo"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:hint="Ex: 2 meses atrás, Início de 2024" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Alertas antes da captura -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCaptureAlerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/pf_divider"
+                app:cardBackgroundColor="@color/pf_card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/capture_alerts_title"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/pf_black_soft" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/capture_alerts_resolution"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@color/pf_onSurfaceVariant" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/capture_alerts_gesso"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@color/pf_onSurfaceVariant" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Aviso de responsabilidade em card próprio (callout) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLiability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/pf_divider"
+                app:cardBackgroundColor="@color/pf_card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/borda_amarela"
+                    android:clipToOutline="true"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@android:drawable/ic_dialog_alert"
+                        app:tint="@color/pf_icon"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="@string/liability" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/liability"
+                        android:textColor="@color/pf_onSurfaceVariant"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="3dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTakePhoto"
+                style="?attr/materialButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_target_min"
+                android:layout_marginTop="16dp"
+                android:text="Tirar Foto"
+                app:icon="@drawable/ic_camera"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                app:iconTint="@android:color/white"
+                app:backgroundTint="#1A237E"
+                android:textColor="@android:color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPickGallery"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_target_min"
+                android:layout_marginTop="12dp"
+                android:text="Selecionar da Galeria"
+                app:icon="@drawable/ic_image_outline"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#1A237E"
+                app:iconTint="#1A237E"
+                android:textColor="#1A237E"
+                app:backgroundTint="#FFFFFF" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAnalyze"
+                style="?attr/materialButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_target_min"
+                android:layout_marginTop="12dp"
+                android:text="Analisar"
+                app:icon="@drawable/ic_baseline_analytics_24"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                app:iconTint="@android:color/white"
+                app:backgroundTint="#1A237E"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
+
