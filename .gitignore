@@ -1,1 +1,27 @@
-openai.properties
+# Android/Gradle
+.idea/
+.gradle/
+local.properties
+*.iml
+*/build/
+build/
+captures/
+# Não versionar distribuições do Gradle gigantes
+gradle-*/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Secrets
+.env
+.env.*
+secrets.*
+*.keystore
+*.jks
+keystore.properties
+app/google-services.json
+app/src/main/res/values/secrets.xml
+
+# SO/Editor
+.DS_Store
+Thumbs.db
+*.log
