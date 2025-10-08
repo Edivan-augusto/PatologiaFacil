@@ -1,57 +1,114 @@
-PatologiaFácil (Android, Kotlin)
+# PatologiaFácil (Android, Kotlin)
 
-Aplicativo nativo para análise on-device de fissuras em paredes, com base em heurísticas morfológicas e regras mapeadas ao TCC. Tudo roda localmente (sem rede).
+Aplicativo nativo para análise **on-device** de fissuras em paredes, baseado em heurísticas morfológicas e regras alinhadas ao TCC. Tudo roda localmente (sem rede). Há, opcionalmente, um caminho de análise remota via API (OpenAI) para comparação.
 
-Requisitos
+> **Resumo:** Tire/importe uma foto, o app extrai traços da fissura, calcula medidas/atributos e aplica regras para sugerir gravidade, possíveis causas e ações recomendadas. Os resultados podem ser salvos no histórico local.
 
-Android Studio (Koala+)
+---
 
-SDK 34
+## Requisitos
+- Android Studio (Koala ou superior)
+- Android SDK 34
+- Emulador API 34 ou dispositivo físico (minSdk 24)
+- Gradle Wrapper do projeto (não é necessário versionar `gradle-*/`)
 
-Emulador API 34 ou dispositivo físico (minSdk 24)
+## Como abrir e rodar
+1. Abra a pasta `PatologiaFacil/` no Android Studio.
+2. Aguarde a sincronização do Gradle.
+3. Selecione o módulo **app** e execute em um dispositivo/emulador.
 
-Como abrir/rodar
+### Smoke test (fluxo mínimo)
+1. Onboarding -> **Entrar**  
+2. Tutorial -> **Começar a Usar**  
+3. Abas: **Início**, **Capturar**, **Diagnóstico**, **Histórico**  
+4. Em **Capturar**: tire uma foto (CameraX) **ou** escolha da galeria; depois toque **Analisar**  
+5. Em **Diagnóstico**: confira imagem, caracterização, gravidade, causas e ações  
+6. **Salvar no Histórico** -> confirme que o item aparece e persiste (Room)
 
-Abra a pasta PatologiaFacil/ no Android Studio.
+---
 
-Sincronize o Gradle.
+## Funcionalidades
+- Captura de imagem (CameraX) e seleção da galeria
+- Processamento **100% local** (on-device) usando algoritmos clássicos
+- Diagnóstico com regras transparentes (explicáveis)
+- Histórico de análises (Room), com imagem, tempo e JSON de resultado
+- Modo opcional de análise remota (OpenAI) para comparação/validação
 
-Rode app em um dispositivo/emulador.
+## Pipeline (on-device)
+1. Conversão para escala de cinza
+2. Equalização local de contraste
+3. Filtro de mediana
+4. Detecção de bordas (Sobel) + supressão de não-máximos (NMS)
+5. Dupla limiarização + histerese
+6. Operações morfológicas (abertura/fechamento)
+7. Afinamento (Zhang-Suen)
+8. Componentes conectados -> extração de atributos (comprimento, largura, razão, orientação, tortuosidade etc.)
+9. Regras para gravidade/causas e recomendações de ação
 
-Smoke test:
+> Observação: o objetivo é **orientativo/educacional**. O aplicativo **não substitui** laudo técnico.
 
-Onboarding → Entrar;
+---
 
-Tutorial → Começar a Usar;
+## Estrutura (resumo)
+```
+PatologiaFacil/
+ ├─ app/
+ │   ├─ src/main/
+ │   │   ├─ java/...        # Camadas UI, domínio e processamento
+ │   │   ├─ res/            # Layouts, drawables, strings
+ │   │   └─ AndroidManifest.xml
+ │   └─ build.gradle.kts
+ ├─ gradle/wrapper/         # Gradle Wrapper (properties/jar)
+ ├─ settings.gradle.kts
+ └─ README.md
+```
 
-Abas: Início, Capturar, Diagnóstico, Histórico;
+---
 
-Em Capturar: tire foto (CameraX) ou escolha da galeria; então toque Analisar;
+## Configuração da análise remota (OpenAI) [opcional]
+A análise on-device é o padrão. Para testar a rota remota:
+1. **NÃO** versionar segredos. Garanta que `.gitignore` exclua: `openai.properties`, `.env`, `*.keystore`, `*.jks`, `keystore.properties`, `app/google-services.json`.
+2. Crie um arquivo **fora do controle de versão**: `openai.properties`  
+   ```
+   openai.apiKey=SEU_TOKEN_AQUI
+   ```
+3. Alternativa: defina a variável de ambiente `OPENAI_API_KEY`.
+4. O build injeta a chave em `BuildConfig.OPENAI_API_KEY` e o cliente usa o modelo `gpt-4o-mini` para processar a imagem selecionada.
 
-Em Diagnóstico: ver imagem, caracterização, gravidade, causas e ações;
+> Dica: nunca faça commit de chaves. Se ocorrer, **revogue** e reescreva o histórico (ex.: `git filter-repo`).
 
-Salvar no Histórico → item aparece e persiste (Room).
+---
 
-Notas
+## Privacidade e dados
+- Todo o processamento padrão ocorre localmente.  
+- O modo remoto só envia a imagem selecionada e metadados mínimos necessários para a análise.  
+- Consulte o código para ver exatamente o que é enviado quando o modo remoto está ativo.
 
-Pipeline 100% Kotlin/SDK: grayscale → equalização local → mediana → Sobel+NMS → dupla limiarização + histerese → abertura/fechamento → afinamento (Zhang–Suen) → componentes conectados → recursos → regras para causas/gravidade.
+---
 
-Persistência: Room salva AnalysisEntity com imageUri, local, tempoEvento, resultJson.
+## Solução de problemas
+- **Build falha após clonar**: rode um *Sync Project with Gradle Files* e verifique a versão do SDK 34 instalada.
+- **CameraX sem imagem**: conceda permissões de câmera/armazenamento e teste em dispositivo físico.
+- **APK muito grande**: verifique recursos não usados e mantenha apenas o Gradle Wrapper versionado (evite `gradle-*/lib/*.jar` no repo).
 
-Privacidade: tudo local; resultado orientativo (não substitui laudo).
+---
 
-Licenças
+## Roadmap
+- Ajuste fino das regras e thresholds por perfil de parede/iluminação
+- Exportar laudo em PDF a partir do diagnóstico
+- Anotações manuais (desenhar/editar máscara)
+- Comparação entre execuções (antes/depois)
+- Benchmark com datasets públicos
 
-Ícones Material simplificados (vector drawables).
+---
 
-Projeto educacional/demonstrativo.
+## Licenças
+- Ícones Material (vector drawables) simplificados.
+- Projeto educacional/demonstrativo.
 
-Configuração da API OpenAI
+---
 
-Copie o arquivo openai.properties.example para openai.properties (mantendo fora do controle de versão) e informe sua chave em openai.apiKey=....
-
-Alternativamente, defina a variável de ambiente OPENAI_API_KEY.
-
-O app lê a chave durante o build (BuildConfig.OPENAI_API_KEY) e repassa ao cliente de visão.
-
-A análise remota usa o modelo gpt-4o-mini para processar a imagem selecionada.
+## Avisos importantes para o repositório
+- Use somente o **Gradle Wrapper**; não versione distribuições completas do Gradle (`gradle-*/`).
+- Garanta um `.gitignore` adequado (Android/Gradle/segredos).
+- Ative *push protection* e *secret scanning* no GitHub.
