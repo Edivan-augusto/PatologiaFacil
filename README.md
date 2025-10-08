@@ -65,27 +65,6 @@ PatologiaFacil/
 
 ---
 
-## Configuração da análise remota (OpenAI) [opcional]
-A análise on-device é o padrão. Para testar a rota remota:
-1. **NÃO** versionar segredos. Garanta que `.gitignore` exclua: `openai.properties`, `.env`, `*.keystore`, `*.jks`, `keystore.properties`, `app/google-services.json`.
-2. Crie um arquivo **fora do controle de versão**: `openai.properties`  
-   ```
-   openai.apiKey=SEU_TOKEN_AQUI
-   ```
-3. Alternativa: defina a variável de ambiente `OPENAI_API_KEY`.
-4. O build injeta a chave em `BuildConfig.OPENAI_API_KEY` e o cliente usa o modelo `gpt-4o-mini` para processar a imagem selecionada.
-
-> Dica: nunca faça commit de chaves. Se ocorrer, **revogue** e reescreva o histórico (ex.: `git filter-repo`).
-
----
-
-## Privacidade e dados
-- Todo o processamento padrão ocorre localmente.  
-- O modo remoto só envia a imagem selecionada e metadados mínimos necessários para a análise.  
-- Consulte o código para ver exatamente o que é enviado quando o modo remoto está ativo.
-
----
-
 ## Solução de problemas
 - **Build falha após clonar**: rode um *Sync Project with Gradle Files* e verifique a versão do SDK 34 instalada.
 - **CameraX sem imagem**: conceda permissões de câmera/armazenamento e teste em dispositivo físico.
@@ -107,8 +86,3 @@ A análise on-device é o padrão. Para testar a rota remota:
 - Projeto educacional/demonstrativo.
 
 ---
-
-## Avisos importantes para o repositório
-- Use somente o **Gradle Wrapper**; não versione distribuições completas do Gradle (`gradle-*/`).
-- Garanta um `.gitignore` adequado (Android/Gradle/segredos).
-- Ative *push protection* e *secret scanning* no GitHub.
